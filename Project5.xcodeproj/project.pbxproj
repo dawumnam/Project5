@@ -13,6 +13,7 @@
 		EB4AF3F3263C2BD000D22595 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB4AF3F1263C2BD000D22595 /* Main.storyboard */; };
 		EB4AF3F5263C2BD200D22595 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4AF3F4263C2BD200D22595 /* Assets.xcassets */; };
 		EB4AF3F8263C2BD200D22595 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB4AF3F6263C2BD200D22595 /* LaunchScreen.storyboard */; };
+		EB4AF400263C2CD200D22595 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = EB4AF3FF263C2CD200D22595 /* start.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EB4AF3F4263C2BD200D22595 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB4AF3F7263C2BD200D22595 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB4AF3F9263C2BD200D22595 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB4AF3FF263C2CD200D22595 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				EB4AF3EF263C2BD000D22595 /* ViewController.swift */,
 				EB4AF3F1263C2BD000D22595 /* Main.storyboard */,
 				EB4AF3F4263C2BD200D22595 /* Assets.xcassets */,
+				EB4AF3FF263C2CD200D22595 /* start.txt */,
 				EB4AF3F6263C2BD200D22595 /* LaunchScreen.storyboard */,
 				EB4AF3F9263C2BD200D22595 /* Info.plist */,
 			);
@@ -125,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB4AF3F8263C2BD200D22595 /* LaunchScreen.storyboard in Resources */,
+				EB4AF400263C2CD200D22595 /* start.txt in Resources */,
 				EB4AF3F5263C2BD200D22595 /* Assets.xcassets in Resources */,
 				EB4AF3F3263C2BD000D22595 /* Main.storyboard in Resources */,
 			);
@@ -289,6 +293,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HKG9X63N2V;
 				INFOPLIST_FILE = Project5/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HKG9X63N2V;
 				INFOPLIST_FILE = Project5/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
