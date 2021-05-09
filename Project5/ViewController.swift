@@ -11,6 +11,7 @@ class ViewController: UITableViewController {
     
     var allWords = [String]()
     var usedWords = [String]()
+    var currentWord: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +29,18 @@ class ViewController: UITableViewController {
         if allWords.isEmpty {
             allWords = ["silkworm"]
         }
+        let defaults = UserDefaults.standard
         
-        startGame()
+        if let prevCurrentWord = defaults.string(forKey: "prevCurrentWord") {
+            title = prevCurrentWord
+            if let prevUsedWords = defaults.array(forKey: "prevUsedWords") as? [String] {
+                usedWords = prevUsedWords
+            }
+        } else {
+            title = allWords.randomElement()
+            defaults.set(title, forKey: "prevCurrentWord")
+        }
 
-        // Do any additional setup after loading the view.
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,7 +54,9 @@ class ViewController: UITableViewController {
     }
     
     @objc func startGame() {
+        let defaults = UserDefaults.standard
         title = allWords.randomElement()
+        defaults.set(title, forKey: "prevCurrentWord")
         usedWords.removeAll(keepingCapacity: true)
         tableView.reloadData()
     }
@@ -72,16 +83,21 @@ class ViewController: UITableViewController {
         if !isOriginal(word: lowerAnswer) { errorMessage += "Already exists" }
         
         if errorMessage == "" {
-        
+            
+            let defaults = UserDefaults.standard
             usedWords.insert(answer, at: 0)
+            defaults.set(usedWords,forKey: "prevUsedWords")
+
 
             let indexPath = IndexPath(row: 0, section: 0)
             tableView.insertRows(at: [indexPath], with: .automatic)
+        } else {
+            
+            let ac = UIAlertController(title: errorMessage, message: nil, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            present(ac, animated: true)
         }
         
-        let ac = UIAlertController(title: errorMessage, message: nil, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        present(ac, animated: true)
     }
     
     func isPossible(word: String) -> Bool {
